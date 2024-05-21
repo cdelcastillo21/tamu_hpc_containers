@@ -2,27 +2,13 @@
 marp: true
 ---
 
-# TAMU HPC Containers
+# Singularity Tutorial
 
-The following repository contains the code, examples, and documentation for running HPC compliant containers on Texas A&M's HPC Clusters.
-This repository originated from the workshop "Containers for HPC Reproducibility: Building, Deploying, and Optimizing" presented at the SEVENTH ANNUAL TEXAS A&M RESEARCH COMPUTING SYMPOSIUM on Tuesday May 21, 2024 - 
+> Carlos del-Castillo-Negrete
+> May 21, 2024
+> Kindly adapted for FASTER from [ACES Container Workshop](https://hprc.tamu.edu/training/aces_containers_scientific.html)
 
 ---
-
-
-## Seventh Annual Texas A&M Research Computing Symposium - "Containers for HPC Reproducibility: Building, Deploying, and Optimizing"
-
-To build the containers in this example you'll need docker installed locally:
-
-- Docker Engine - https://docs.docker.com/engine/install/, but preferably Docker Desktop:
-    - Mac - https://docs.docker.com/desktop/install/mac-install/
-    - Windows - https://docs.docker.com/desktop/install/windows-install/
-- Singularity  
-    -
-
-> **Note** - You'll probably need a good 20-40 GB of disk space free to comfortably build containers locally without having to clear your cache repeatedly.
-
-Furthermore you'll need to create a profile on Docker Hub, and create an image repository for it - https://hub.docker.com
 
 ## Setting up Tutorial Environment
 
@@ -33,14 +19,26 @@ cd $SCRATCH
 mkdir container_workshop
 cd container_workshop
 pwd
-export TRAINING=/scratch/training/singularity
-ls $TRAINING
 ```
-ls $TRAINING
 
-## Singularity Tutorial
+I've stored pre-built singularity files for this workshop at `/scratch/user/u.cd80202/singularity/`, in case you aren't able to pull containers on your own.
 
-Here's a markdown tutorial with slides separated by '---', including the provided content with appropriate bash code blocks:
+---
+
+## Setting Up Your Singularity Environment
+
+Return to your tutorial directory (if necessary) and set your singularity cache directory for temporary files
+
+```bash
+cd $SCRATCH/s_tutorial
+export SINGULARITY_CACHEDIR=$TMPDIR
+```
+
+Connect to the internet for fetching images
+
+```bash
+module load WebProxy
+```
 
 ---
 
